@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const Box = styled.div`
@@ -26,5 +29,12 @@ export const Button = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: .5;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+`
+
+export const ResetButton = styled.button`
+  padding: 0.6rem;
 `

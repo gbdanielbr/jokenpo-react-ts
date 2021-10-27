@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { FaHandRock, FaHandPaper, FaHandScissors } from 'react-icons/fa'
-import { Container, Box, Player, Button } from './styles';
+import { Container, Box, Player, Button, ResetButton } from './styles';
 
 const App: React.FC = () => {
   const [player, setPlayer] = useState(1);
@@ -14,10 +14,10 @@ const App: React.FC = () => {
       return (
         <>
           <h1>Jogador 2 ganhou!</h1>
-          <button onClick={() => {
+          <ResetButton onClick={() => {
             setPlayer(1)
             setPlayerSelect([])
-          }}>Reiniciar</button>
+          }}>Reiniciar</ResetButton>
         </>
       )
     }
@@ -25,10 +25,10 @@ const App: React.FC = () => {
       return (
         <>
           <h1>Jogador 1 ganhou!</h1>
-          <button onClick={() => {
+          <ResetButton onClick={() => {
             setPlayer(1)
             setPlayerSelect([])
-          }}>Reiniciar</button>
+          }}>Reiniciar</ResetButton>
         </>
       )
     }
@@ -36,10 +36,10 @@ const App: React.FC = () => {
       return (
         <>
           <h1>Jogador 1 ganhou!</h1>
-          <button onClick={() => {
+          <ResetButton onClick={() => {
             setPlayer(1)
             setPlayerSelect([])
-          }}>Reiniciar</button>
+          }}>Reiniciar</ResetButton>
         </>
       )
     }
@@ -47,10 +47,10 @@ const App: React.FC = () => {
       return (
         <>
           <h1>Jogador 2 ganhou!</h1>
-          <button onClick={() => {
+          <ResetButton onClick={() => {
             setPlayer(1)
             setPlayerSelect([])
-          }}>Reiniciar</button>
+          }}>Reiniciar</ResetButton>
         </>
       )
     }
@@ -58,10 +58,10 @@ const App: React.FC = () => {
       return (
         <>
           <h1>Jogador 2 ganhou!</h1>
-          <button onClick={() => {
+          <ResetButton onClick={() => {
             setPlayer(1)
             setPlayerSelect([])
-          }}>Reiniciar</button>
+          }}>Reiniciar</ResetButton>
         </>
       )
     }
@@ -69,10 +69,10 @@ const App: React.FC = () => {
       return (
         <>
           <h1>Jogador 1 ganhou!</h1>
-          <button onClick={() => {
+          <ResetButton onClick={() => {
             setPlayer(1)
             setPlayerSelect([])
-          }}>Reiniciar</button>
+          }}>Reiniciar</ResetButton>
         </>
       )
     }
@@ -80,10 +80,10 @@ const App: React.FC = () => {
       return (
         <>
           <h1>Empate!</h1>
-          <button onClick={() => {
+          <ResetButton onClick={() => {
             setPlayer(1)
             setPlayerSelect([])
-          }}>Reiniciar</button>
+          }}>Reiniciar</ResetButton>
         </>
       )
     }
