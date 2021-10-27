@@ -8,6 +8,20 @@ export default createGlobalStyle`
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: gray;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, button {
+  font: .8rem Roboto, sans-serif;
+  text-align: center;
+}
+
 `;

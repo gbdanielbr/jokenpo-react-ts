@@ -26,4 +26,5 @@ export const Button = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: .5;
 `
