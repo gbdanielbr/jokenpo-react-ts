@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-
-import { Container } from './styles';
+import { FaHandRock, FaHandPaper, FaHandScissors } from 'react-icons/fa'
+import { Container, Box } from './styles';
 
 const App: React.FC = () => {
   const [player, setPlayer] = useState(1);
@@ -9,8 +9,19 @@ const App: React.FC = () => {
 
   return (
     <Container> 
-      Hello World
+      <Box>
+            <FaHandRock>
+            </FaHandRock>
+
+            <FaHandPaper>
+            </FaHandPaper>
+
+            <FaHandScissors>
+            </FaHandScissors>
+
+      </Box>
     </Container>
+
   );
 
 }
