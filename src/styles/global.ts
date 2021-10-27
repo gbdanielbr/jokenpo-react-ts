@@ -10,4 +10,4 @@ export default createGlobalStyle`
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif !important;
 }
-  `;
+`;
