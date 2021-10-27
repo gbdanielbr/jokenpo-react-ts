@@ -22,14 +22,26 @@ export const Box = styled.div`
   text-shadow: 1px -2px 2px #ffffff;
 `
 
+export const Header = styled.div`
+  position: absolute;
+  margin-top: -25rem;
+`
+
 export const Player = styled.div`
+  position: absolute;
   align-items: center;
   justify-content: center;
-  margin-top: -3.5rem;
+  margin-top: -22rem;
   color: black;
   h1 {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
+`
+
+export const ButtonContainer = styled.div`
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
 `
 
 export const Button = styled.div`
@@ -37,14 +49,31 @@ export const Button = styled.div`
   align-items: center;
   justify-content: center;
   opacity: 0.5;
-  margin-bottom: -2rem;
   &:hover {
     opacity: 1;
-    zoom: 150%;
+    zoom: 110%;
+    transition: 0.3s;
+    cursor: pointer;
   }
 `
 
 export const ResetButton = styled.button`
   padding: 0.6rem;
-  color: blue;
+  color: darkblue;
+  font-weight: bold;
+  background-color: transparent;
+  border-radius: 0.6rem;
+  /* -webkit-box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.36); */
+  /* box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.36); */
+  &:hover {
+    zoom: 110%;
+    cursor: pointer;
+  }
+`
+
+export const Placar = styled.div`
+  margin-top: 24rem;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
 `

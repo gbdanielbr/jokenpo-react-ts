@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
-import { FaHandRock, FaHandPaper, FaHandScissors } from 'react-icons/fa'
-import { Container, Box, Player, Button, ResetButton } from './styles';
+import { Header, Container, Box, ButtonContainer, Player, Button, ResetButton, Placar } from './styles';
 
 const App: React.FC = () => {
   const [player, setPlayer] = useState(1);
   const [playerSelect, setPlayerSelect] = useState<string[]>([])
+  const [count, setCount] = useState<number[]>([0,0])
   const getWinner = () => {
     const player1 = playerSelect[0]
     const player2 = playerSelect[1]
@@ -13,7 +13,7 @@ const App: React.FC = () => {
     if(player1 === 'Rock' && player2 === 'Paper') {
       return (
         <>
-          <h4>Resultado</h4>
+          <h3>Resultado</h3>
           <h1>Jogador 2 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -25,7 +25,7 @@ const App: React.FC = () => {
     else if(player1 === 'Rock' && player2 === 'Scissors') {
       return (
         <>
-          <h4>Resultado</h4>
+          <h3>Resultado</h3>
           <h1>Jogador 1 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -37,7 +37,7 @@ const App: React.FC = () => {
     else if(player1 === 'Paper' && player2 === 'Rock') {
       return (
         <>
-          <h4>Resultado</h4>
+          <h3>Resultado</h3>
           <h1>Jogador 1 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -49,7 +49,7 @@ const App: React.FC = () => {
     else if(player1 === 'Paper' && player2 === 'Scissors') {
       return (
         <>
-          <h4>Resultado</h4>
+          <h3>Resultado</h3>
           <h1>Jogador 2 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -61,7 +61,7 @@ const App: React.FC = () => {
     else if(player1 === 'Scissors' && player2 === 'Rock') {
       return (
         <>
-          <h4>Resultado</h4>
+          <h3>Resultado</h3>
           <h1>Jogador 2 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -73,19 +73,19 @@ const App: React.FC = () => {
     else if(player1 === 'Scissors' && player2 === 'Paper') {
       return (
         <>
-          <h4>Resultado</h4>
+          <h3>Resultado</h3>
           <h1>Jogador 1 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
             setPlayerSelect([])
-          }}>Reiniciar</ResetButton>
+          }}>reiniciar</ResetButton>
         </>
       )
     }
     else {
       return (
         <>
-          <h4>Resultado</h4>
+          <h3>Resultado</h3>
           <h1>Empate!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -101,34 +101,46 @@ const App: React.FC = () => {
       <Box>
         {player <= 2 ?
           <>
+            <>
+              <Header>
+              <h3>escolha</h3>
+              </Header>
+            </>
             <Player>
-              <h2>Escolha</h2>
               <h1>Jogador {player}</h1>
             </Player>    
 
+            <ButtonContainer>
             <Button onClick={() => {
               setPlayerSelect([...playerSelect, 'Rock'])
               setPlayer(player + 1)
               }}>
-              <FaHandRock size={60} color="darkblue" />
+              <img src="./Images/rock.png" width="100" alt="Rock" />
             </Button>
 
             <Button onClick={() => {
               setPlayerSelect([...playerSelect, 'Paper'])
               setPlayer(player + 1)
               }}>
-              <FaHandPaper size={60} color="darkblue" />
+              <img src="./Images/paper.png" width="100" alt="Paper" />
             </Button>
 
             <Button onClick={() => {
               setPlayerSelect([...playerSelect, 'Scissors'])
               setPlayer(player + 1)
               }}>
-              <FaHandScissors size={60} color="darkblue" />
+              <img src="./Images/scissors.png" width="100" alt="Scissors" />
             </Button>
+            </ButtonContainer>
           </>
           : getWinner()
         }
+
+        <Placar>
+          <h4>pontuação</h4>
+          <h5>Jogador 1 {count[0]} vs {count[1]} Jogador 2</h5>
+        </Placar>
+
       </Box>
     </Container>
   );
