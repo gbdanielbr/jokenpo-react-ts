@@ -13,6 +13,7 @@ const App: React.FC = () => {
     if(player1 === 'Rock' && player2 === 'Paper') {
       return (
         <>
+          <h4>Resultado</h4>
           <h1>Jogador 2 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -24,6 +25,7 @@ const App: React.FC = () => {
     else if(player1 === 'Rock' && player2 === 'Scissors') {
       return (
         <>
+          <h4>Resultado</h4>
           <h1>Jogador 1 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -35,6 +37,7 @@ const App: React.FC = () => {
     else if(player1 === 'Paper' && player2 === 'Rock') {
       return (
         <>
+          <h4>Resultado</h4>
           <h1>Jogador 1 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -46,6 +49,7 @@ const App: React.FC = () => {
     else if(player1 === 'Paper' && player2 === 'Scissors') {
       return (
         <>
+          <h4>Resultado</h4>
           <h1>Jogador 2 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -57,6 +61,7 @@ const App: React.FC = () => {
     else if(player1 === 'Scissors' && player2 === 'Rock') {
       return (
         <>
+          <h4>Resultado</h4>
           <h1>Jogador 2 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -68,6 +73,7 @@ const App: React.FC = () => {
     else if(player1 === 'Scissors' && player2 === 'Paper') {
       return (
         <>
+          <h4>Resultado</h4>
           <h1>Jogador 1 ganhou!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -79,6 +85,7 @@ const App: React.FC = () => {
     else {
       return (
         <>
+          <h4>Resultado</h4>
           <h1>Empate!</h1>
           <ResetButton onClick={() => {
             setPlayer(1)
@@ -95,6 +102,7 @@ const App: React.FC = () => {
         {player <= 2 ?
           <>
             <Player>
+              <h2>Escolha</h2>
               <h1>Jogador {player}</h1>
             </Player>    
 
