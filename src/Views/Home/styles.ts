@@ -65,7 +65,7 @@ export const Hand = styled.div<Props>`
     animation-timing-function: linear;
     animation: spin 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     animation-iteration-count: infinite;
-    transform: rotate(30deg);
+    transform: rotate(5deg);
     backface-visibility: hidden;
     perspective: 1000px;
     transform-origin: ${props => props.player == 1 ? 'left':'right'} 60%;
@@ -81,40 +81,6 @@ export const Hand = styled.div<Props>`
     85% {transform: rotate(-2deg);}
     92% {transform: rotate(1deg);}
     100% {transform: rotate(0);}
-  }
-`
-
-export const AgainButton = styled.button`
-  width: 8rem;
-  height: 3.2rem;
-  font-size: 130%;
-  padding: 0.5rem;
-  margin-bottom: 3rem;
-  color: white;
-  background: #345B63;
-  border-radius: 0.3rem;
-  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
-  &:hover {
-    background-color: #345B77;
-    cursor: pointer;
-  }
-`
-
-export const ResetButton = styled.div`
-  width: 8rem;
-  height: 3.2rem;
-  font-size: 130%;
-  padding: 0.5rem;
-  margin-bottom: 3rem;
-  color: white;
-  background: #345B63;
-  border-radius: 0.3rem;
-  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
-  &:hover {
-    background-color: #345B77;
-    cursor: pointer;
   }
 `
 

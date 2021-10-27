@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { Header, Container, Box, HandContainer, Player, Hand, AgainButton, ResetButton, Score } from './styles';
+import Result from './Components/result';
+import { Header, Container, Box, HandContainer, Player, Hand, Score } from './styles';
 
 const App: React.FC = () => {
   const [player, setPlayer] = useState(1);
@@ -16,88 +17,25 @@ const App: React.FC = () => {
     const player2 = playerChoice[1]
     
     if(player1 === 'Rock' && player2 === 'Paper') {
-      return (
-        <>
-          <h3>Resultado</h3>
-          <h1>jogador 2 ganhou!</h1>
-          <AgainButton onClick={() => {
-            setPlayer(1)
-            setPlayerChoice([])
-          }}>de novo</AgainButton>
-        </>
-      )
+      return (<Result player={2} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score} />)
     }
     else if(player1 === 'Rock' && player2 === 'Scissors') {
-      return (
-        <>
-          <h3>Resultado</h3>
-          <h1>jogador 1 ganhou!</h1>
-          <AgainButton onClick={() => {
-            setPlayer(1)
-            setPlayerChoice([])
-          }}>de novo</AgainButton>
-        </>
-      )
+      return (<Result player={1} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
     }
     else if(player1 === 'Paper' && player2 === 'Rock') {
-      return (
-        <>
-          <h3>Resultado</h3>
-          <h1>jogador 1 ganhou!</h1>
-          <AgainButton onClick={() => {
-            setPlayer(1)
-            setPlayerChoice([])
-          }}>de novo</AgainButton>
-        </>
-      )
+      return (<Result player={1} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
     }
     else if(player1 === 'Paper' && player2 === 'Scissors') {
-      return (
-        <>
-          <h3>Resultado</h3>
-          <h1>jogador 2 ganhou!</h1>
-          <AgainButton onClick={() => {
-            setPlayer(1)
-            setPlayerChoice([])
-          }}>de novo</AgainButton>
-        </>
-      )
+      return (<Result player={2} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
     }
     else if(player1 === 'Scissors' && player2 === 'Rock') {
-      return (
-        <>
-          <h3>Resultado</h3>
-          <h1>jogador 2 ganhou!</h1>
-          <AgainButton onClick={() => {
-            setPlayer(1)
-            setPlayerChoice([])
-          }}>de novo</AgainButton>
-        </>
-      )
+      return (<Result player={2} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
     }
     else if(player1 === 'Scissors' && player2 === 'Paper') {
-      return (
-        <>
-          <h3>Resultado</h3>
-          <h1>jogador 1 ganhou!</h1>
-          <AgainButton onClick={() => {
-            setPlayer(1)
-            setPlayerChoice([])
-          }}>de novo</AgainButton>
-        </>
-      )
+      return (<Result player={1} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
     }
     else {
-      return (
-        <>
-          <h3>Resultado</h3>
-          <h1>empate!</h1>
-          <AgainButton onClick={() => {
-            setPlayer(1)
-            setPlayerChoice([])
-          }}>de novo</AgainButton>
-        </>
-      )
+      return (<Result player={0} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
     }
 }
 
