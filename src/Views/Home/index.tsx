@@ -11,28 +11,83 @@ const App: React.FC = () => {
     const player2 = playerSelect[1]
 
     if(player1 === 'Rock' && player2 === 'Paper') {
-      return (<h1>Jogador 2 ganhou!</h1>)
+      return (
+        <>
+          <h1>Jogador 2 ganhou!</h1>
+          <button onClick={() => {
+            setPlayer(1)
+            setPlayerSelect([])
+          }}>Reiniciar</button>
+        </>
+      )
     }
     else if(player1 === 'Rock' && player2 === 'Scissors') {
-      return (<h1>Jogador 1 ganhou!</h1>)
+      return (
+        <>
+          <h1>Jogador 1 ganhou!</h1>
+          <button onClick={() => {
+            setPlayer(1)
+            setPlayerSelect([])
+          }}>Reiniciar</button>
+        </>
+      )
     }
     else if(player1 === 'Paper' && player2 === 'Rock') {
-      return (<h1>Jogador 1 ganhou!</h1>)
+      return (
+        <>
+          <h1>Jogador 1 ganhou!</h1>
+          <button onClick={() => {
+            setPlayer(1)
+            setPlayerSelect([])
+          }}>Reiniciar</button>
+        </>
+      )
     }
     else if(player1 === 'Paper' && player2 === 'Scissors') {
-      return (<h1>Jogador 2 ganhou!</h1>)
+      return (
+        <>
+          <h1>Jogador 2 ganhou!</h1>
+          <button onClick={() => {
+            setPlayer(1)
+            setPlayerSelect([])
+          }}>Reiniciar</button>
+        </>
+      )
     }
     else if(player1 === 'Scissors' && player2 === 'Rock') {
-      return (<h1>Jogador 2 ganhou!</h1>)
+      return (
+        <>
+          <h1>Jogador 2 ganhou!</h1>
+          <button onClick={() => {
+            setPlayer(1)
+            setPlayerSelect([])
+          }}>Reiniciar</button>
+        </>
+      )
     }
     else if(player1 === 'Scissors' && player2 === 'Paper') {
-      return (<h1>Jogador 1 ganhou!</h1>)
+      return (
+        <>
+          <h1>Jogador 1 ganhou!</h1>
+          <button onClick={() => {
+            setPlayer(1)
+            setPlayerSelect([])
+          }}>Reiniciar</button>
+        </>
+      )
     }
     else {
-      return (<h1>Empate</h1>)
+      return (
+        <>
+          <h1>Empate!</h1>
+          <button onClick={() => {
+            setPlayer(1)
+            setPlayerSelect([])
+          }}>Reiniciar</button>
+        </>
+      )
     }
 }
-
 
   return (
     <Container>   
