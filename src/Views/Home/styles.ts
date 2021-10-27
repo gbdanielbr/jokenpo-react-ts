@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+interface Props {
+  player: number;
+}
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -14,7 +17,6 @@ export const Box = styled.div`
   background: radial-gradient(#d4ecdd, #93b5c6);
   height: 28rem;
   width: 15rem;
-  padding: 3rem;
   justify-content: space-around;
   border-radius: 1rem;
   -webkit-box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.36);
@@ -38,41 +40,86 @@ export const Player = styled.div`
   }
 `
 
-export const ButtonContainer = styled.div`
+export const HandContainer = styled.div`
+  width: 100%;
+  height: 50%;
   margin-top: 1.2rem;
   display: flex;
   flex-direction: column;
+  align-items: space-around;
+  justify-content: space-around;
+
 `
 
-export const Button = styled.div`
+export const Hand = styled.div<Props>`
+  width: 100%;
+  padding: 0.2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  opacity: 0.5;
+  justify-content: ${props => props.player == 1 ? 'start':'end'};
+  img{
+    width: 8rem;
+  }
+
   &:hover {
-    opacity: 1;
-    zoom: 110%;
-    transition: 0.3s;
+    animation-timing-function: linear;
+    animation: spin 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    animation-iteration-count: infinite;
+    transform: rotate(30deg);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform-origin: ${props => props.player == 1 ? 'left':'right'} 60%;
+  }
+
+  @keyframes spin {
+    0% {transform: rotate(0);}
+    15% {transform: rotate(5deg);}
+    30% {transform: rotate(-5deg);}
+    45% {transform: rotate(4deg);}
+    60% {transform: rotate(-4deg);}
+    75% {transform: rotate(2deg);}
+    85% {transform: rotate(-2deg);}
+    92% {transform: rotate(1deg);}
+    100% {transform: rotate(0);}
+  }
+`
+
+export const AgainButton = styled.button`
+  width: 8rem;
+  height: 3.2rem;
+  font-size: 130%;
+  padding: 0.5rem;
+  margin-bottom: 3rem;
+  color: white;
+  background: #345B63;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
+  &:hover {
+    background-color: #345B77;
     cursor: pointer;
   }
 `
 
-export const ResetButton = styled.button`
-  padding: 0.6rem;
-  color: darkblue;
-  font-weight: bold;
-  background-color: transparent;
-  border-radius: 0.6rem;
-  /* -webkit-box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.36); */
-  /* box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.36); */
+export const ResetButton = styled.div`
+  width: 8rem;
+  height: 3.2rem;
+  font-size: 130%;
+  padding: 0.5rem;
+  margin-bottom: 3rem;
+  color: white;
+  background: #345B63;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
   &:hover {
-    zoom: 110%;
+    background-color: #345B77;
     cursor: pointer;
   }
 `
 
-export const Placar = styled.div`
-  margin-top: 24rem;
+export const Score = styled.div`
+  margin-top: 23rem;
   position: absolute;
   align-items: center;
   justify-content: center;

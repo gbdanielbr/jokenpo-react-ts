@@ -1,24 +1,29 @@
 
 import React, { useState } from 'react';
-import { Header, Container, Box, ButtonContainer, Player, Button, ResetButton, Placar } from './styles';
+import { Header, Container, Box, HandContainer, Player, Hand, AgainButton, ResetButton, Score } from './styles';
 
 const App: React.FC = () => {
   const [player, setPlayer] = useState(1);
-  const [playerSelect, setPlayerSelect] = useState<string[]>([])
-  const [count, setCount] = useState<number[]>([0,0])
-  const getWinner = () => {
-    const player1 = playerSelect[0]
-    const player2 = playerSelect[1]
+  const [playerChoice, setPlayerChoice] = useState<string[]>([])
+  const [score, setScore] = useState<number[]>([0,0])
+  
+  // useEffect(()=>{
+  //   setScore([score[0], score[1] + 1])
+  // },[score])
 
+  const game = () => {
+    const player1 = playerChoice[0]
+    const player2 = playerChoice[1]
+    
     if(player1 === 'Rock' && player2 === 'Paper') {
       return (
         <>
           <h3>Resultado</h3>
-          <h1>Jogador 2 ganhou!</h1>
-          <ResetButton onClick={() => {
+          <h1>jogador 2 ganhou!</h1>
+          <AgainButton onClick={() => {
             setPlayer(1)
-            setPlayerSelect([])
-          }}>Reiniciar</ResetButton>
+            setPlayerChoice([])
+          }}>de novo</AgainButton>
         </>
       )
     }
@@ -26,11 +31,11 @@ const App: React.FC = () => {
       return (
         <>
           <h3>Resultado</h3>
-          <h1>Jogador 1 ganhou!</h1>
-          <ResetButton onClick={() => {
+          <h1>jogador 1 ganhou!</h1>
+          <AgainButton onClick={() => {
             setPlayer(1)
-            setPlayerSelect([])
-          }}>Reiniciar</ResetButton>
+            setPlayerChoice([])
+          }}>de novo</AgainButton>
         </>
       )
     }
@@ -38,11 +43,11 @@ const App: React.FC = () => {
       return (
         <>
           <h3>Resultado</h3>
-          <h1>Jogador 1 ganhou!</h1>
-          <ResetButton onClick={() => {
+          <h1>jogador 1 ganhou!</h1>
+          <AgainButton onClick={() => {
             setPlayer(1)
-            setPlayerSelect([])
-          }}>Reiniciar</ResetButton>
+            setPlayerChoice([])
+          }}>de novo</AgainButton>
         </>
       )
     }
@@ -50,11 +55,11 @@ const App: React.FC = () => {
       return (
         <>
           <h3>Resultado</h3>
-          <h1>Jogador 2 ganhou!</h1>
-          <ResetButton onClick={() => {
+          <h1>jogador 2 ganhou!</h1>
+          <AgainButton onClick={() => {
             setPlayer(1)
-            setPlayerSelect([])
-          }}>Reiniciar</ResetButton>
+            setPlayerChoice([])
+          }}>de novo</AgainButton>
         </>
       )
     }
@@ -62,11 +67,11 @@ const App: React.FC = () => {
       return (
         <>
           <h3>Resultado</h3>
-          <h1>Jogador 2 ganhou!</h1>
-          <ResetButton onClick={() => {
+          <h1>jogador 2 ganhou!</h1>
+          <AgainButton onClick={() => {
             setPlayer(1)
-            setPlayerSelect([])
-          }}>Reiniciar</ResetButton>
+            setPlayerChoice([])
+          }}>de novo</AgainButton>
         </>
       )
     }
@@ -74,11 +79,11 @@ const App: React.FC = () => {
       return (
         <>
           <h3>Resultado</h3>
-          <h1>Jogador 1 ganhou!</h1>
-          <ResetButton onClick={() => {
+          <h1>jogador 1 ganhou!</h1>
+          <AgainButton onClick={() => {
             setPlayer(1)
-            setPlayerSelect([])
-          }}>reiniciar</ResetButton>
+            setPlayerChoice([])
+          }}>de novo</AgainButton>
         </>
       )
     }
@@ -86,11 +91,11 @@ const App: React.FC = () => {
       return (
         <>
           <h3>Resultado</h3>
-          <h1>Empate!</h1>
-          <ResetButton onClick={() => {
+          <h1>empate!</h1>
+          <AgainButton onClick={() => {
             setPlayer(1)
-            setPlayerSelect([])
-          }}>Reiniciar</ResetButton>
+            setPlayerChoice([])
+          }}>de novo</AgainButton>
         </>
       )
     }
@@ -107,39 +112,52 @@ const App: React.FC = () => {
               </Header>
             </>
             <Player>
-              <h1>Jogador {player}</h1>
+              <h1>jogador {player}</h1>
             </Player>    
 
-            <ButtonContainer>
-            <Button onClick={() => {
-              setPlayerSelect([...playerSelect, 'Rock'])
+            <HandContainer>
+            <Hand player={player} onClick={() => {
+              setPlayerChoice([...playerChoice, 'Rock'])
               setPlayer(player + 1)
               }}>
-              <img src="./Images/rock.png" width="100" alt="Rock" />
-            </Button>
+              {player == 1 ?
+              <img src="./Images/rock1.png" alt="Rock" />
+              :               
+              <img src="./Images/rock2.png" alt="Rock" />
+              }
+            </Hand>
 
-            <Button onClick={() => {
-              setPlayerSelect([...playerSelect, 'Paper'])
+            <Hand player={player} onClick={() => {
+              setPlayerChoice([...playerChoice, 'Paper'])
               setPlayer(player + 1)
               }}>
-              <img src="./Images/paper.png" width="100" alt="Paper" />
-            </Button>
+              {player == 1 ?
+              <img src="./Images/paper1.png" alt="Paper" />
+              :               
+              <img src="./Images/paper2.png" alt="Paper" />
+              }
+            </Hand>
 
-            <Button onClick={() => {
-              setPlayerSelect([...playerSelect, 'Scissors'])
+            <Hand player={player} onClick={() => {
+              setPlayerChoice([...playerChoice, 'Scissors'])
               setPlayer(player + 1)
               }}>
-              <img src="./Images/scissors.png" width="100" alt="Scissors" />
-            </Button>
-            </ButtonContainer>
+              {player == 1 ?
+              <img src="./Images/scissors1.png" alt="Scissors" />
+              :               
+              <img src="./Images/scissors2.png" alt="Scissors" />
+              }
+            </Hand>
+            </HandContainer>
+
           </>
-          : getWinner()
+          : game()
         }
 
-        <Placar>
-          <h4>pontuação</h4>
-          <h5>Jogador 1 {count[0]} vs {count[1]} Jogador 2</h5>
-        </Placar>
+        <Score>
+          <h3>placar</h3>
+          <h3>{score[0]} vs {score[1]}</h3>
+        </Score>
 
       </Box>
     </Container>
