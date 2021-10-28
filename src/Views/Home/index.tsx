@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import Result from './Result';
-import { Header, Container, Box, HandContainer, Player, Hand, Score } from './styles';
+import { Header, Container, Box, HandContainer, Player, Player1Hand, Player2Hand, Score } from './styles';
 
 const App: React.FC = () => {
   const [player, setPlayer] = useState(1);
@@ -49,43 +49,57 @@ const App: React.FC = () => {
             </Player>
 
             <HandContainer>
-              <Hand player={player} onClick={() => {
-                setPlayer(player + 1)
-                setPlayerChoice([...playerChoice, 'Rock'])
-              }}>
               {player == 1 ?
-                <img src="./Images/rock1.png" alt="Rock" />
-                :               
-                <img src="./Images/rock2.png" alt="Rock" />
-              }
-              </Hand>
+                <>
+                  <Player1Hand onClick={() => {
+                    setPlayer(player + 1)
+                    setPlayerChoice([...playerChoice, 'Rock'])
+                  }}>
+                    <img src="./Images/rock1.png" alt="Rock" />
+                  </Player1Hand>
 
-              <Hand player={player} onClick={() => {
-                setPlayerChoice([...playerChoice, 'Paper'])
-                setPlayer(player + 1)
-              }}>
-              {player == 1 ?
-                <img src="./Images/paper1.png" alt="Paper" />
-                :               
-                <img src="./Images/paper2.png" alt="Paper" />
-              }
-              </Hand>
+                  <Player1Hand onClick={() => {
+                    setPlayerChoice([...playerChoice, 'Paper'])
+                    setPlayer(player + 1)
+                  }}>
+                    <img src="./Images/paper1.png" alt="Paper" />
+                  </Player1Hand>
 
-              <Hand player={player} onClick={() => {
-                setPlayerChoice([...playerChoice, 'Scissors'])
-                setPlayer(player + 1)
-              }}>
-              {player == 1 ?
-                <img src="./Images/scissors1.png" alt="Scissors" />
-                :               
-                <img src="./Images/scissors2.png" alt="Scissors" />
+                  <Player1Hand onClick={() => {
+                    setPlayerChoice([...playerChoice, 'Scissors'])
+                    setPlayer(player + 1)
+                  }}>
+                    <img src="./Images/scissors1.png" alt="Scissors" />
+                  </Player1Hand>
+                </>
+              :
+                <>
+                  <Player2Hand onClick={() => {
+                    setPlayer(player + 1)
+                    setPlayerChoice([...playerChoice, 'Rock'])
+                  }}>
+                    <img src="./Images/rock2.png" alt="Rock" />
+                  </Player2Hand>
+
+                  <Player2Hand onClick={() => {
+                    setPlayerChoice([...playerChoice, 'Paper'])
+                    setPlayer(player + 1)
+                  }}>
+                    <img src="./Images/paper2.png" alt="Paper" />
+                  </Player2Hand>
+
+                  <Player2Hand onClick={() => {
+                    setPlayerChoice([...playerChoice, 'Scissors'])
+                    setPlayer(player + 1)
+                  }}>
+                    <img src="./Images/scissors2.png" alt="Scissors" />
+                  </Player2Hand>
+                </>
               }
-              </Hand>
             </HandContainer>
           </>
           : getResult()
-        }
-
+        } 
         <Score>
           <h3>placar</h3>
           <h3>{score[0]} vs {score[1]}</h3>
