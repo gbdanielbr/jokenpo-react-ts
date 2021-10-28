@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import Result from './Components/result';
+import Result from './Result';
 import { Header, Container, Box, HandContainer, Player, Hand, Score } from './styles';
 
 const App: React.FC = () => {
@@ -8,7 +8,7 @@ const App: React.FC = () => {
   const [playerChoice, setPlayerChoice] = useState<string[]>([])
   const [score, setScore] = useState<number[]>([0,0])
 
-  const game = () => {
+  const getResult = () => {
     const player1 = playerChoice[0]
     const player2 = playerChoice[1]
     
@@ -40,52 +40,50 @@ const App: React.FC = () => {
       <Box>
         {player <= 2 ?
           <>
-            <>
-              <Header>
+            <Header>
               <h3>escolha</h3>
-              </Header>
-            </>
+            </Header>
+
             <Player>
               <h1>jogador {player}</h1>
-            </Player>    
+            </Player>
 
             <HandContainer>
-            <Hand player={player} onClick={() => {
-              setPlayerChoice([...playerChoice, 'Rock'])
-              setPlayer(player + 1)
+              <Hand player={player} onClick={() => {
+                setPlayer(player + 1)
+                setPlayerChoice([...playerChoice, 'Rock'])
               }}>
               {player == 1 ?
-              <img src="./Images/rock1.png" alt="Rock" />
-              :               
-              <img src="./Images/rock2.png" alt="Rock" />
+                <img src="./Images/rock1.png" alt="Rock" />
+                :               
+                <img src="./Images/rock2.png" alt="Rock" />
               }
-            </Hand>
+              </Hand>
 
-            <Hand player={player} onClick={() => {
-              setPlayerChoice([...playerChoice, 'Paper'])
-              setPlayer(player + 1)
+              <Hand player={player} onClick={() => {
+                setPlayerChoice([...playerChoice, 'Paper'])
+                setPlayer(player + 1)
               }}>
               {player == 1 ?
-              <img src="./Images/paper1.png" alt="Paper" />
-              :               
-              <img src="./Images/paper2.png" alt="Paper" />
+                <img src="./Images/paper1.png" alt="Paper" />
+                :               
+                <img src="./Images/paper2.png" alt="Paper" />
               }
-            </Hand>
+              </Hand>
 
-            <Hand player={player} onClick={() => {
-              setPlayerChoice([...playerChoice, 'Scissors'])
-              setPlayer(player + 1)
+              <Hand player={player} onClick={() => {
+                setPlayerChoice([...playerChoice, 'Scissors'])
+                setPlayer(player + 1)
               }}>
               {player == 1 ?
-              <img src="./Images/scissors1.png" alt="Scissors" />
-              :               
-              <img src="./Images/scissors2.png" alt="Scissors" />
+                <img src="./Images/scissors1.png" alt="Scissors" />
+                :               
+                <img src="./Images/scissors2.png" alt="Scissors" />
               }
-            </Hand>
+              </Hand>
             </HandContainer>
-
           </>
-          : game()
+          : getResult()
         }
 
         <Score>
