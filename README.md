@@ -35,6 +35,6 @@ In this repository I develop a 'Rock, Paper, Scissors' game as a challenge using
 
 ### Next steps:
 
-- [ ] Implementation of project improvements.
+- [ ] Project improvements.
 
 ---
