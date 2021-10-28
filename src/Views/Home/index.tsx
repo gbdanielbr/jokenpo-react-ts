@@ -2,12 +2,20 @@
 import React, { useState } from 'react';
 import Result from './Result';
 import { Header, Container, Box, HandContainer, Player, Player1Hand, Player2Hand, Score } from './styles';
+import Rock1 from '../../images/rock1.png'
+import Rock2 from '../../images/rock2.png'
+import Paper1 from '../../images/paper1.png'
+import Paper2 from '../../images/paper2.png'
+import Scissors1 from '../../images/scissors1.png'
+import Scissors2 from '../../images/scissors2.png'
 
 const App: React.FC = () => {
   const [player, setPlayer] = useState(1);
   const [playerChoice, setPlayerChoice] = useState<string[]>([])
   const [score, setScore] = useState<number[]>([0,0])
 
+
+  
   const getResult = () => {
     const player1 = playerChoice[0]
     const player2 = playerChoice[1]
@@ -55,21 +63,21 @@ const App: React.FC = () => {
                     setPlayer(player + 1)
                     setPlayerChoice([...playerChoice, 'Rock'])
                   }}>
-                    <img src="./Images/rock1.png" alt="Rock" />
+                    <img src={Rock1} alt="Rock" />
                   </Player1Hand>
 
                   <Player1Hand onClick={() => {
                     setPlayerChoice([...playerChoice, 'Paper'])
                     setPlayer(player + 1)
                   }}>
-                    <img src="./Images/paper1.png" alt="Paper" />
+                    <img src={Paper1} alt="Paper" />
                   </Player1Hand>
 
                   <Player1Hand onClick={() => {
                     setPlayerChoice([...playerChoice, 'Scissors'])
                     setPlayer(player + 1)
                   }}>
-                    <img src="./Images/scissors1.png" alt="Scissors" />
+                    <img src={Scissors1} alt="Scissors" />
                   </Player1Hand>
                 </>
               :
@@ -78,21 +86,21 @@ const App: React.FC = () => {
                     setPlayer(player + 1)
                     setPlayerChoice([...playerChoice, 'Rock'])
                   }}>
-                    <img src="./Images/rock2.png" alt="Rock" />
+                    <img src={Rock2} alt="Rock" />
                   </Player2Hand>
 
                   <Player2Hand onClick={() => {
                     setPlayerChoice([...playerChoice, 'Paper'])
                     setPlayer(player + 1)
                   }}>
-                    <img src="./Images/paper2.png" alt="Paper" />
+                    <img src={Paper2} alt="Paper" />
                   </Player2Hand>
 
                   <Player2Hand onClick={() => {
                     setPlayerChoice([...playerChoice, 'Scissors'])
                     setPlayer(player + 1)
                   }}>
-                    <img src="./Images/scissors2.png" alt="Scissors" />
+                    <img src={Scissors2} alt="Scissors" />
                   </Player2Hand>
                 </>
               }
