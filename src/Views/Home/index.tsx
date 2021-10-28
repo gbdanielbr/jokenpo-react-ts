@@ -7,10 +7,6 @@ const App: React.FC = () => {
   const [player, setPlayer] = useState(1);
   const [playerChoice, setPlayerChoice] = useState<string[]>([])
   const [score, setScore] = useState<number[]>([0,0])
-  
-  // useEffect(()=>{
-  //   setScore([score[0], score[1] + 1])
-  // },[score])
 
   const game = () => {
     const player1 = playerChoice[0]
