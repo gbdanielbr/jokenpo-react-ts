@@ -1,7 +1,7 @@
 ## Front-End Development Challenge
 
 ### Description:
-In this repository I develop a 'Rock, Paper and Scissors' game as a challenge using TypeScript and ReactJS. The objective is to develop the game for two players, receive their choices and then shows the winner. I also implemented a score counting logic and a reset button.
+In this repository I develop a 'Rock, Paper, Scissors' game as a challenge using TypeScript and ReactJS. The objective is to develop the game for two players, receive their choices and then shows the winner. I also implemented a score counting logic and a reset button.
 
 ---
 
