@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+## Front-End Development Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Description:
+In this repository I develop a 'Rock, Paper and Scissors' game as a challenge using TypeScript and ReactJS. 
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### Technologies:
+<img src="https://img.shields.io/badge/-HTML-orange?logo=HTML5" /> <img src="https://img.shields.io/badge/-CSS-informational?logo=CSS3" /> <img src="https://img.shields.io/badge/--3178C6?logo=typescript&logoColor=ffffff" /> <img src="https://img.shields.io/badge/-React-blue?logo=React" />
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Instructions:
+- [ ] Clone the repository: *git clone https://github.com/gbdanielbr/jokenpo-react-ts*
+- [ ] Install the dependencies: *npm install*
+- [ ] Certify that you have *@types/styled-components": "^5.1.15"* and *"styled-components": "^5.3.3",* in your package.json file
+- [ ] Initialize the application: *npm start*
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Development stage:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Finished:
 
-### `npm run build`
+- [x] Game logic: each player's choice and final result;
+- [x] Basic game items and positioning: hands image, title, player designation and footer with score;
+- [x] Style implementation;
+- [x] Responsive style implementation;
+- [x] Public URL deployment: https://gbdanielbr.github.io/jokenpo-react-ts/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Under development:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [ ] Bug fixes;
+- [ ] Code refactoring;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Next steps:
 
-### `npm run eject`
+- [ ] Implementation of project improvements.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
