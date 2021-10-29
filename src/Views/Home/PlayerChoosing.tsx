@@ -1,7 +1,6 @@
 import React from "react";
 import { GameHands } from "./rules"
 import { HandContainer, Header, Rules, Player, RockButton, PaperButton, ScissorsButton, LizardButton, SpockButton } from "./styles";
-
 import RulesImage from '../../images/rules.png';
 import Rock from '../../images/rock.png';
 import Paper from '../../images/paper.png';
@@ -18,7 +17,7 @@ const PlayerChoosing: React.FC<PlayerChoosingProps> = ({ player, onHandClick }) 
   return (
     <>
       <Header>
-        <h3>escolha</h3>
+        <h2>escolha</h2>
       </Header>
       <Player>
         <h1>jogador {player}</h1>

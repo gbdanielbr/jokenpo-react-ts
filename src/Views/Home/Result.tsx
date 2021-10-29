@@ -10,7 +10,7 @@ interface Props {
 const Result: React.FC<Props> = ({player, onAgain, onReset}) => {
   return (
     <>
-      <h3>Resultado</h3>
+      <h2>Resultado</h2>
       <h1>{player > 0 ? `jogador ${player} ganhou!`: `empate!`}</h1>
         <AgainButton onClick={onAgain}>de novo</AgainButton>
         <ResetButton onClick={onReset}>zerar</ResetButton>

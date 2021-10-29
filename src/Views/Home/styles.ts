@@ -11,6 +11,7 @@ export const Container = styled.div`
 `
 
 export const Box = styled.div`
+  min-width: 24rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -39,10 +40,11 @@ export const Header = styled.div`
 `
 
 export const Player = styled.div`
+  font-size: 120%;
   position: absolute;
   align-items: center;
   justify-content: center;
-  margin-top: -28rem;
+  margin-top: -27rem;
   color: black;
   h1 {
     margin-top: 1rem;
@@ -51,7 +53,7 @@ export const Player = styled.div`
 
 export const HandContainer = styled.div<props>`
   .button{
-    filter: ${props => props.player === 1 ? 'hue-rotate(0deg)' : 'hue-rotate(60deg)'};
+    filter: ${props => props.player === 1 ? 'hue-rotate(0deg)' : 'hue-rotate(65deg)'};
     cursor: pointer;
     background-color: white;
     border-radius: 50%;
@@ -122,7 +124,7 @@ export const ResetButton = styled.div`
   font-size: 90%;
   font-weight: bold;
   padding: 0.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   color: black;
   background: transparent;
   border-radius: 0.3rem;
@@ -135,7 +137,8 @@ export const ResetButton = styled.div`
 `
 
 export const Score = styled.div`
-  margin-top: 32rem;
+  font-size: 120%;
+  margin-top: 28rem;
   position: absolute;
   align-items: center;
   justify-content: center;

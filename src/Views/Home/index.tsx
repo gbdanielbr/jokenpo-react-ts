@@ -59,8 +59,8 @@ const Home: React.FC = () => {
           )
         }
         <Score>
-          <h3>placar</h3>
-          <h3>{score[0]} vs {score[1]}</h3>
+          <h2>placar</h2>
+          <h2>{score[0]} vs {score[1]}</h2>
         </Score>
 
       </Box>
