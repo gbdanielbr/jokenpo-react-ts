@@ -38,11 +38,11 @@ const PlayerChoosing: React.FC<PlayerChoosingProps> = ({ player, onHandClick }) 
               <img src={Scissors} alt="Scissors" />
             </Player1Hand>
 
-            <Player1Hand onClick={() => {onHandClick('Paper')}}>
+            <Player1Hand onClick={() => {onHandClick('Lizard')}}>
               <img src={Lizard} alt="Lizard" />
             </Player1Hand>
 
-            <Player1Hand onClick={() => {onHandClick('Scissors')}}>
+            <Player1Hand onClick={() => {onHandClick('Spock')}}>
               <img src={Spock} alt="Spock" />
             </Player1Hand>
           </>
@@ -60,11 +60,11 @@ const PlayerChoosing: React.FC<PlayerChoosingProps> = ({ player, onHandClick }) 
               <img src={Scissors} alt="Scissors" />
             </Player2Hand>
 
-            <Player2Hand onClick={() => {onHandClick('Paper')}}>
+            <Player2Hand onClick={() => {onHandClick('Lizard')}}>
               <img src={Lizard} alt="Lizard" />
             </Player2Hand>
 
-            <Player2Hand onClick={() => {onHandClick('Scissors')}}>
+            <Player2Hand onClick={() => {onHandClick('Spock')}}>
               <img src={Spock} alt="Spock" />
             </Player2Hand>
           </>

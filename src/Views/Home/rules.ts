@@ -1,9 +1,11 @@
-export type GameHands = 'Rock' | 'Paper' | 'Scissors'
+export type GameHands = 'Rock' | 'Paper' | 'Scissors' | 'Lizard' | 'Spock'
 
 const rules = { // O objeto rules guarda a condição de vitória de para cada escolha do jogador
-  Rock: ['Scissors'],
-  Paper: ['Rock'],
-  Scissors: ['Paper']
+  Rock: ['Scissors', 'Lizard'],
+  Paper: ['Rock', 'Spock'],
+  Scissors: ['Paper', 'Lizard'],
+  Spock: ['Rock', 'Scissors'],
+  Lizard: ['Spock', 'Paper']
 }
 
 // Abaixo acontece a seguinte verificação: 
