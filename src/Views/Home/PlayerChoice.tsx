@@ -10,12 +10,10 @@ import Scissors2 from '../../images/scissors2.png';
 
 interface PlayerChoiceProps {
   player: number;
-  setPlayer: (player: number) => void;
-  playerChoice: string[];
-  setPlayerChoice: (playerChoice: string[]) => void;
+  onHandClick: (choice: string) => void
 }
 
-const PlayerChoice: React.FC<PlayerChoiceProps> = ({ player, playerChoice, setPlayerChoice, setPlayer }) => {
+const PlayerChoice: React.FC<PlayerChoiceProps> = ({ player, onHandClick }) => {
   return (
     <>
       <Header>
@@ -29,42 +27,30 @@ const PlayerChoice: React.FC<PlayerChoiceProps> = ({ player, playerChoice, setPl
       <HandContainer>
         {player == 1 ?
           <>
-            <Player1Hand onClick={() => {
-              setPlayer(player + 1)
-              setPlayerChoice([...playerChoice, 'Rock'])
-            }}><img src={Rock1} alt="Rock" />
+            <Player1Hand onClick={() => {onHandClick('Rock')}}>
+              <img src={Rock1} alt="Rock" />
             </Player1Hand>
 
-            <Player1Hand onClick={() => {
-              setPlayerChoice([...playerChoice, 'Paper'])
-              setPlayer(player + 1)
-            }}><img src={Paper1} alt="Paper" />
+            <Player1Hand onClick={() => {onHandClick('Paper')}}>
+              <img src={Paper1} alt="Paper" />
             </Player1Hand>
 
-            <Player1Hand onClick={() => {
-              setPlayerChoice([...playerChoice, 'Scissors'])
-              setPlayer(player + 1)
-            }}><img src={Scissors1} alt="Scissors" />
+            <Player1Hand onClick={() => {onHandClick('Scissors')}}>
+              <img src={Scissors1} alt="Scissors" />
             </Player1Hand>
           </>
         :
           <>
-            <Player2Hand onClick={() => {
-              setPlayer(player + 1)
-              setPlayerChoice([...playerChoice, 'Rock'])
-            }}><img src={Rock2} alt="Rock" />
+            <Player2Hand onClick={() => {onHandClick('Rock')}}>
+              <img src={Rock2} alt="Rock" />
             </Player2Hand>
 
-            <Player2Hand onClick={() => {
-              setPlayerChoice([...playerChoice, 'Paper'])
-              setPlayer(player + 1)
-            }}><img src={Paper2} alt="Paper" />
+            <Player2Hand onClick={() => {onHandClick('Paper')}}>
+              <img src={Paper2} alt="Paper" />
             </Player2Hand>
 
-            <Player2Hand onClick={() => {
-              setPlayerChoice([...playerChoice, 'Scissors'])
-              setPlayer(player + 1)
-            }}><img src={Scissors2} alt="Scissors" />
+            <Player2Hand onClick={() => {onHandClick('Scissors')}}>
+              <img src={Scissors2} alt="Scissors" />
             </Player2Hand>
           </>
         }
@@ -73,4 +59,4 @@ const PlayerChoice: React.FC<PlayerChoiceProps> = ({ player, playerChoice, setPl
   )
 }
 
-export default PlayerChoice
+export default PlayerChoice;

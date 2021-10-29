@@ -8,6 +8,11 @@ const Home: React.FC = () => {
   const [playerChoice, setPlayerChoice] = useState<string[]>([])
   const [score, setScore] = useState<number[]>([0,0])
 
+  const handleOnHandClick = (hand: string) => {
+    setPlayer(player + 1)
+    setPlayerChoice([...playerChoice, hand])
+  }
+
   const getResult = () => {
     const player1 = playerChoice[0]
     const player2 = playerChoice[1]
@@ -39,9 +44,8 @@ const Home: React.FC = () => {
     <Container>   
       <Box>
         {player <= 2 ?
-        ( 
-          <PlayerChoice player={player} playerChoice={playerChoice} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice}/>
-        ) : 
+        (<PlayerChoice player={player} onHandClick={handleOnHandClick}/>) 
+        : 
         getResult()
         } 
         <Score>
