@@ -13,7 +13,7 @@ In this repository I develop a 'Rock, Paper, Scissors' game as a challenge using
 #### Instructions:
 - [ ] Clone the repository:  *git clone https://github.com/gbdanielbr/jokenpo-react-ts*
 - [ ] Install the dependencies:  *npm install*
-- [ ] Make sure that you have *"@types/styled-components": "^5.1.15"* and *"styled-components": "^5.3.3",* in your package.json file
+- [ ] Install styled-components:  *npm install --save styled-components*
 - [ ] Initialize the application:  *npm start*
 
 ---
@@ -30,11 +30,12 @@ In this repository I develop a 'Rock, Paper, Scissors' game as a challenge using
 
 ### Under development:
 
+- [ ] Upgrade to "Rock, Paper, Scissors, Lizard, Spock";
 - [ ] Bug fixes;
 - [ ] Code refactoring;
 
 ### Next steps:
 
-- [ ] Project improvements.
+- 
 
 ---

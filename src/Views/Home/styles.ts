@@ -1,7 +1,4 @@
 import styled from 'styled-components'
-interface Props {
-  player: number;
-}
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -46,43 +43,10 @@ export const HandContainer = styled.div`
   margin-top: 1.2rem;
   display: flex;
   flex-direction: column;
-  align-items: space-around;
+  align-items: center;
   justify-content: space-around;
-
 `
 
-// export const Hand = styled.div<Props>`
-//   width: 100%;
-//   padding: 0.2rem;
-//   display: flex;
-//   align-items: center;
-//   justify-content: ${props => props.player == 1 ? 'start':'end'};
-//   img{
-//     width: 8rem;
-//   }
-
-//   &:hover {
-//     animation-timing-function: linear;
-//     animation: spin 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-//     animation-iteration-count: infinite;
-//     transform: rotate(5deg);
-//     backface-visibility: hidden;
-//     perspective: 1000px;
-//     transform-origin: ${props => props.player == 1 ? 'left':'right'} 60%;
-//   }
-
-//   @keyframes spin {
-//     0% {transform: rotate(0);}
-//     15% {transform: rotate(5deg);}
-//     30% {transform: rotate(-5deg);}
-//     45% {transform: rotate(4deg);}
-//     60% {transform: rotate(-4deg);}
-//     75% {transform: rotate(2deg);}
-//     85% {transform: rotate(-2deg);}
-//     92% {transform: rotate(1deg);}
-//     100% {transform: rotate(0);}
-//   }
-// `
 export const Player1Hand = styled.div`
   width: 100%;
   padding: 0.2rem;
