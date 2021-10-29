@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Result from './Result';
 import { GameHands, getWinningPlayer } from './rules'
-import { Container, Box, Score, Player1Hand } from './styles';
+import { Container, Box, Score } from './styles';
 import PlayerChoosing from './PlayerChoosing';
 
 const Home: React.FC = () => {

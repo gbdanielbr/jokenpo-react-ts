@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+interface props{
+  player:number;
+}
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -8,6 +11,7 @@ export const Container = styled.div`
 `
 
 export const Box = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -16,8 +20,7 @@ export const Box = styled.div`
   width: 24rem;
   justify-content: space-around;
   border-radius: 1rem;
-  -webkit-box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.36);
-  box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.36);
+  box-shadow: 0 0 16px 6px rgba(0, 0, 0, 0.36);
   text-shadow: 1px -2px 2px #ffffff;
 `
 
@@ -46,89 +49,52 @@ export const Player = styled.div`
   }
 `
 
-export const HandContainer = styled.div`
-  width: 100%;
-  height: 50%;
-  margin-top: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+export const HandContainer = styled.div<props>`
+  .button{
+    filter: ${props => props.player === 1 ? 'hue-rotate(0deg)' : 'hue-rotate(60deg)'};
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    zoom: 53%;
+    z-index: 1;
+    opacity: 50%;
+    img{
+      transition: 0.1s;
+      display: block;
+      border-radius: 50%;
+      border: 0.2rem solid white;
+    }
+  }
+  .button:hover{
+    img {box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+    opacity: 100%;
+}  
 `
 
-export const Player1Hand = styled.div`
-  width: 100%;
-  zoom: 75%;
-  padding: 0.2rem;
-  margin-left: 1rem;
-  opacity: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  z-index: 1;
-  img{
-    width: 8rem;
-  }
+export const RockButton = styled.div`
+  right: 14.3%;
+  bottom: 19.8%;
+` 
 
-  &:hover {
-    animation-timing-function: linear;
-    animation: spin 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    animation-iteration-count: infinite;
-    transform: rotate(5deg);
-    backface-visibility: hidden;
-    perspective: 1000px;
-    transform-origin: left 60%;
-  }
-
-  @keyframes spin {
-    0% {transform: rotate(0);}
-    15% {transform: rotate(5deg);}
-    30% {transform: rotate(-5deg);}
-    45% {transform: rotate(4deg);}
-    60% {transform: rotate(-4deg);}
-    75% {transform: rotate(2deg);}
-    85% {transform: rotate(-2deg);}
-    92% {transform: rotate(1deg);}
-    100% {transform: rotate(0);}
-  }
+export const PaperButton = styled.div`
+  right: 3%;
+  bottom: 46%;
 `
 
-export const Player2Hand = styled.div`
-  width: 100%;
-  zoom: 75%;
-  -webkit-filter: hue-rotate(50deg);
-  margin-right: 1rem;
-  padding: 0.2rem;
-  opacity: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  z-index: 1;
-  img{
-    width: 8rem;
-  }
+export const ScissorsButton = styled.div`
+  right: 35.6%;
+  top: 19%;
+`
 
-  &:hover {
-    animation-timing-function: linear;
-    animation: spin 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    animation-iteration-count: infinite;
-    transform: rotate(5deg);
-    backface-visibility: hidden;
-    perspective: 1000px;
-    transform-origin: right 60%;
-  }
+export const LizardButton = styled.div`
+  left: 16%;
+  bottom: 19%;
+`
 
-  @keyframes spin {
-    0% {transform: rotate(0);}
-    15% {transform: rotate(5deg);}
-    30% {transform: rotate(-5deg);}
-    45% {transform: rotate(4deg);}
-    60% {transform: rotate(-4deg);}
-    75% {transform: rotate(2deg);}
-    85% {transform: rotate(-2deg);}
-    92% {transform: rotate(1deg);}
-    100% {transform: rotate(0);}
-  }
+export const SpockButton = styled.div`
+right: 67%;
+bottom: 45%;
 `
 
 export const AgainButton = styled.button`

@@ -1,6 +1,6 @@
 import React from "react";
 import { GameHands } from "./rules"
-import { HandContainer, Header, Rules, Player, Player1Hand, Player2Hand } from "./styles";
+import { HandContainer, Header, Rules, Player, RockButton, PaperButton, ScissorsButton, LizardButton, SpockButton } from "./styles";
 
 import RulesImage from '../../images/rules.png';
 import Rock from '../../images/rock.png';
@@ -23,52 +23,28 @@ const PlayerChoosing: React.FC<PlayerChoosingProps> = ({ player, onHandClick }) 
       <Player>
         <h1>jogador {player}</h1>
       </Player>
-      <HandContainer>
-        {player == 1 ?
+      <HandContainer player={player}>
           <>
-            <Player1Hand onClick={() => {onHandClick('Rock')}}>
+            <RockButton className="button" onClick={() => {onHandClick('Rock')}}>
               <img src={Rock} alt="Rock" />
-            </Player1Hand>
+            </RockButton>
 
-            <Player1Hand onClick={() => {onHandClick('Paper')}}>
+            <PaperButton className="button" onClick={() => {onHandClick('Paper')}}>
               <img src={Paper} alt="Paper" />
-            </Player1Hand>
+            </PaperButton>
 
-            <Player1Hand onClick={() => {onHandClick('Scissors')}}>
+            <ScissorsButton className="button" onClick={() => {onHandClick('Scissors')}}>
               <img src={Scissors} alt="Scissors" />
-            </Player1Hand>
+            </ScissorsButton>
 
-            <Player1Hand onClick={() => {onHandClick('Lizard')}}>
+            <LizardButton className="button" onClick={() => {onHandClick('Lizard')}}>
               <img src={Lizard} alt="Lizard" />
-            </Player1Hand>
+            </LizardButton>
 
-            <Player1Hand onClick={() => {onHandClick('Spock')}}>
+            <SpockButton className="button" onClick={() => {onHandClick('Spock')}}>
               <img src={Spock} alt="Spock" />
-            </Player1Hand>
+            </SpockButton>
           </>
-        :
-          <>
-            <Player2Hand onClick={() => {onHandClick('Rock')}}>
-              <img src={Rock} alt="Rock" />
-            </Player2Hand>
-
-            <Player2Hand onClick={() => {onHandClick('Paper')}}>
-              <img src={Paper} alt="Paper" />
-            </Player2Hand>
-
-            <Player2Hand onClick={() => {onHandClick('Scissors')}}>
-              <img src={Scissors} alt="Scissors" />
-            </Player2Hand>
-
-            <Player2Hand onClick={() => {onHandClick('Lizard')}}>
-              <img src={Lizard} alt="Lizard" />
-            </Player2Hand>
-
-            <Player2Hand onClick={() => {onHandClick('Spock')}}>
-              <img src={Spock} alt="Spock" />
-            </Player2Hand>
-          </>
-        }
       </HandContainer>
       <Rules><img src={RulesImage} alt="Rules" /> </Rules>
     </>
