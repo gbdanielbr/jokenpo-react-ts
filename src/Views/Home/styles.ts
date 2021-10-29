@@ -12,8 +12,8 @@ export const Box = styled.div`
   align-items: center;
   flex-direction: column;
   background: radial-gradient(#d4ecdd, #93b5c6);
-  height: 28rem;
-  width: 15rem;
+  height: 36rem;
+  width: 24rem;
   justify-content: space-around;
   border-radius: 1rem;
   -webkit-box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.36);
@@ -21,16 +21,25 @@ export const Box = styled.div`
   text-shadow: 1px -2px 2px #ffffff;
 `
 
+export const Rules = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  zoom: 65%;
+  opacity: 75%;
+`
+
 export const Header = styled.div`
   position: absolute;
-  margin-top: -25rem;
+  margin-top: -32rem;
 `
 
 export const Player = styled.div`
   position: absolute;
   align-items: center;
   justify-content: center;
-  margin-top: -22rem;
+  margin-top: -28rem;
   color: black;
   h1 {
     margin-top: 1rem;
@@ -49,10 +58,14 @@ export const HandContainer = styled.div`
 
 export const Player1Hand = styled.div`
   width: 100%;
+  zoom: 75%;
   padding: 0.2rem;
+  margin-left: 1rem;
+  opacity: 50%;
   display: flex;
   align-items: center;
   justify-content: start;
+  z-index: 1;
   img{
     width: 8rem;
   }
@@ -82,10 +95,15 @@ export const Player1Hand = styled.div`
 
 export const Player2Hand = styled.div`
   width: 100%;
+  zoom: 75%;
+  -webkit-filter: hue-rotate(50deg);
+  margin-right: 1rem;
   padding: 0.2rem;
+  opacity: 50%;
   display: flex;
   align-items: center;
   justify-content: end;
+  z-index: 1;
   img{
     width: 8rem;
   }
@@ -120,8 +138,7 @@ export const AgainButton = styled.button`
   color: white;
   background: #345B63;
   border-radius: 0.3rem;
-  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.36);
   transition: 0.3s;
   &:hover {
     background-color: darkblue;
@@ -143,8 +160,7 @@ export const ResetButton = styled.div`
   color: black;
   background: transparent;
   border-radius: 0.3rem;
-  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.36);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.36);
   transition: 0.3s;
   &:hover {
     background-color: lightcyan;
@@ -153,7 +169,7 @@ export const ResetButton = styled.div`
 `
 
 export const Score = styled.div`
-  margin-top: 23rem;
+  margin-top: 32rem;
   position: absolute;
   align-items: center;
   justify-content: center;

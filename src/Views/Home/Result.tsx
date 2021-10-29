@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { getWinningPlayer, GameHands } from "./rules"
 import { AgainButton, ResetButton } from "./styles"
 
 interface Props {

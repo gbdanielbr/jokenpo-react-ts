@@ -31,6 +31,13 @@ const Home: React.FC = () => {
 
     const winner = getWinningPlayer(playerChoice[0], playerChoice[1])
     setWinningPlayer(winner)
+
+    if (winner === 1) {
+      setScore([score[0]+1,score[1]])
+    } 
+    if (winner === 2) {
+      setScore([score[0],score[1]+1])
+    }
     },[player])
 
   return (
