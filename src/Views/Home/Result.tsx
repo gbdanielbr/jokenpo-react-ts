@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { AgainButton, ResetButton } from './styles';
+import { AgainButton, ResetButton } from "./styles"
+
 interface Props {
   player: number;
   setPlayer: ((player:number)=>void);
@@ -38,3 +39,4 @@ const Result: React.FC<Props> = ({player, setPlayer, setPlayerChoice, setScore, 
 }
 
 export default Result;
+
