@@ -1,4 +1,5 @@
 import React from "react";
+import { GameHands } from "./rules"
 import { HandContainer, Header, Player, Player1Hand, Player2Hand } from "./styles";
 
 import Rock1 from '../../images/rock1.png';
@@ -8,12 +9,12 @@ import Paper2 from '../../images/paper2.png';
 import Scissors1 from '../../images/scissors1.png';
 import Scissors2 from '../../images/scissors2.png';
 
-interface PlayerChoiceProps {
+interface PlayerChoosingProps {
   player: number;
-  onHandClick: (choice: string) => void
+  onHandClick: (choice: GameHands) => void
 }
 
-const PlayerChoice: React.FC<PlayerChoiceProps> = ({ player, onHandClick }) => {
+const PlayerChoosing: React.FC<PlayerChoosingProps> = ({ player, onHandClick }) => {
   return (
     <>
       <Header>
@@ -59,4 +60,4 @@ const PlayerChoice: React.FC<PlayerChoiceProps> = ({ player, onHandClick }) => {
   )
 }
 
-export default PlayerChoice;
+export default PlayerChoosing;

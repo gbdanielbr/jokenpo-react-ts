@@ -1,4 +1,4 @@
-export type PlayerOptions = 'Rock' | 'Paper' | 'Scissors'
+export type GameHands = 'Rock' | 'Paper' | 'Scissors'
 
 const rules = { // O objeto rules guarda a condição de vitória de para cada escolha do jogador
   Rock: ['Scissors'],
@@ -11,8 +11,7 @@ const rules = { // O objeto rules guarda a condição de vitória de para cada e
 // da escolha do primeiro jogador, será retornado o número 1
 // Já se a escolha do primeiro jogador contemplar a condição de vitória
 // da escolha do segundo jogador, será retornado o número 2
-
-const getWinningPlayer = (player1Choice: PlayerOptions, player2Choice: PlayerOptions): number => {
+export const getWinningPlayer = (player1Choice: GameHands, player2Choice: GameHands): number => {
   const player1WinningCondition = rules[player1Choice]
   if (player1WinningCondition.includes(player2Choice)) return 1
   

@@ -1,77 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Result from './Result';
+import { GameHands, getWinningPlayer } from './rules'
 import { Container, Box, Score, Player1Hand } from './styles';
-import PlayerChoice from './PlayerChoice';
-
-type PlayerOptions = 'Rock' | 'Paper' | 'Scissors'
-
-const rules = { // O objeto rules guarda a condição de vitória de para cada escolha do jogador
-  Rock: ['Scissors'],
-  Paper: ['Rock'],
-  Scissors: ['Paper']
-}
-
-// Abaixo acontece a seguinte verificação: 
-// se a escolha do segundo jogador contemplar a condição de vitória 
-// da escolha do primeiro jogador, será retornado o número 1
-// Já se a escolha do primeiro jogador contemplar a condição de vitória
-// da escolha do segundo jogador, será retornado o número 2
-
-const getWinningPlayer = (player1Choice: PlayerOptions, player2Choice: PlayerOptions): number => {
-  const player1WinningCondition = rules[player1Choice]
-  if (player1WinningCondition.includes(player2Choice)) return 1
-  
-  const player2WinningCondition = rules[player2Choice]
-  if (player2WinningCondition.includes(Player1Hand)) return 2
-
-  return 0
-}
+import PlayerChoosing from './PlayerChoosing';
 
 const Home: React.FC = () => {
   const [player, setPlayer] = useState(1);
-  const [playerChoice, setPlayerChoice] = useState<string[]>([])
+  const [playerChoice, setPlayerChoice] = useState<GameHands[]>([])
   const [score, setScore] = useState<number[]>([0,0])
+  const [winningPlayer, setWinningPlayer] = useState(0)
 
-  const handleOnHandClick = (hand: string) => {
+  const handleOnHandClick = (hand: GameHands) => {
     setPlayer(player + 1)
     setPlayerChoice([...playerChoice, hand])
   }
 
-  const getResult = () => {
-    const player1 = playerChoice[0]
-    const player2 = playerChoice[1]
-    
-    if(player1 === 'Rock' && player2 === 'Paper') {
-      return (<Result player={2} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score} />)
-    }
-    else if(player1 === 'Rock' && player2 === 'Scissors') {
-      return (<Result player={1} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
-    }
-    else if(player1 === 'Paper' && player2 === 'Rock') {
-      return (<Result player={1} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
-    }
-    else if(player1 === 'Paper' && player2 === 'Scissors') {
-      return (<Result player={2} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
-    }
-    else if(player1 === 'Scissors' && player2 === 'Rock') {
-      return (<Result player={2} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
-    }
-    else if(player1 === 'Scissors' && player2 === 'Paper') {
-      return (<Result player={1} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
-    }
-    else {
-      return (<Result player={0} setPlayer={setPlayer} setPlayerChoice={setPlayerChoice} setScore={setScore} score={score}/>)
-    }
-}
+  const handleOnReset = () => {
+    setScore([0, 0])
+    setPlayer(1)
+    setPlayerChoice([])
+  }
+
+  const handleOnAgain = () => {
+    setPlayer(1)
+    setPlayerChoice([])
+  }
+
+  useEffect(() => {
+    if(player <= 2) return
+
+    const winner = getWinningPlayer(playerChoice[0], playerChoice[1])
+    setWinningPlayer(winner)
+    },[player])
 
   return (
     <Container>   
       <Box>
-        {player <= 2 ?
-        (<PlayerChoice player={player} onHandClick={handleOnHandClick}/>) 
-        : 
-        getResult()
-        } 
+        {player <= 2 ? 
+          (
+            <PlayerChoosing 
+              player={player} 
+              onHandClick={handleOnHandClick} 
+            /> 
+          )
+        : (
+            <Result 
+              player={winningPlayer} 
+              onAgain={handleOnAgain} 
+              onReset={handleOnReset} 
+            /> 
+          )
+        }
         <Score>
           <h3>placar</h3>
           <h3>{score[0]} vs {score[1]}</h3>
