@@ -26,16 +26,13 @@ In this repository I develop a 'Rock, Paper, Scissors' game as a challenge using
 - [x] Basic game items and positioning: hands image, title, player designation and footer with score;
 - [x] Style implementation;
 - [x] Responsive style implementation;
-- [x] Public URL deployment: https://gbdanielbr.github.io/jokenpo-react-ts/
+- [x] Public URL deployment: https://gbdanielbr.github.io/jokenpo-react-ts/;
+- [x] Code refactoring;
+- [x] Upgrade to "Rock, Paper, Scissors, Lizard, Spock";
 
 ### Under development:
 
-- [ ] Upgrade to "Rock, Paper, Scissors, Lizard, Spock";
+- [ ] Adapt the game logic for more players;
 - [ ] Bug fixes;
-- [ ] Code refactoring;
-
-### Next steps:
-
-- 
 
 ---
