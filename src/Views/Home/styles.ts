@@ -73,31 +73,41 @@ export const HandContainer = styled.div<props>`
 export const RockButton = styled.div`
   right: 14.3%;
   bottom: 19.8%;
-  &hover{box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+  &:hover{
+    box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+    opacity: 100%;
 `
 
 export const PaperButton = styled.div`
   right: 3%;
   bottom: 46%;
-  &hover{box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+  &:hover{
+    box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+    opacity: 100%;
 `
 
 export const ScissorsButton = styled.div`
   right: 35.6%;
   top: 19%;
-  &hover{box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+  &:hover{
+    box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+    opacity: 100%;
 `
 
 export const LizardButton = styled.div`
   left: 16%;
   bottom: 19%;
-  &hover{box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+  &:hover{
+    box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+    opacity: 100%;
 `
 
 export const SpockButton = styled.div`
   right: 67%;
   bottom: 45%;
-  &hover{box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+  &:hover{
+    box-shadow: 0 0 2rem 0.5rem rgba(53,75,176,0.5)};
+    opacity: 100%;
 `
 
 export const AgainButton = styled.button`
