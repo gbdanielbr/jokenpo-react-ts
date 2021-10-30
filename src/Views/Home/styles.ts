@@ -77,7 +77,10 @@ export const HandContainer = styled.div<props>`
     }
   }
   @media (hover: none) {
-    .button img:hover{box-shadow: none; }
+    .button img:hover{
+      box-shadow: none; 
+      opacity: 50%;
+    }
   }
 `
 
