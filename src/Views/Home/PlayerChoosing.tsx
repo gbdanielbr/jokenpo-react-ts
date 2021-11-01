@@ -1,5 +1,5 @@
 import React from "react";
-import { GameHands } from "./rules"
+import { GameHands } from "./Rules"
 import { HandContainer, Header, Rules, Player, RockButton, PaperButton, ScissorsButton, LizardButton, SpockButton } from "./styles";
 import RulesImage from '../../images/rules.png';
 import Rock from '../../images/rock.png';
@@ -10,7 +10,7 @@ import Spock from '../../images/spock.png';
 
 interface PlayerChoosingProps {
   player: number;
-  onHandClick: (choice: GameHands) => void
+  onHandClick: (choice: GameHands) => void;
 }
 
 const PlayerChoosing: React.FC<PlayerChoosingProps> = ({ player, onHandClick }) => {

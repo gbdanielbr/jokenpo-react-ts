@@ -19,4 +19,3 @@ const Result: React.FC<Props> = ({player, onAgain, onReset}) => {
 }
 
 export default Result;
-

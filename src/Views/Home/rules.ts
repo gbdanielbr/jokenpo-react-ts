@@ -1,5 +1,11 @@
 export type GameHands = 'Rock' | 'Paper' | 'Scissors' | 'Lizard' | 'Spock'
 
+interface props{
+  player:number;
+  numberOfPlayers:number;
+  playerChoice:GameHands[];
+}
+
 const rules = { 
   Rock: ['Scissors', 'Lizard'],
   Paper: ['Rock', 'Spock'],
@@ -8,12 +14,20 @@ const rules = {
   Lizard: ['Spock', 'Paper']
 }
 
-export const getWinningPlayer = (player1Choice: GameHands, player2Choice: GameHands): number => {
-  const player1WinningCondition = rules[player1Choice]
-  if (player1WinningCondition.includes(player2Choice)) return 1
-  
-  const player2WinningCondition = rules[player2Choice]
-  if (player2WinningCondition.includes(player1Choice)) return 2
+export const getWinningPlayer = ({player, numberOfPlayers, playerChoice}:props) => {
 
-  return 0
+  const winner:number[] = [];
+
+  for (let i = 1; i <= numberOfPlayers; i++){
+    const isWinner = rules[playerChoice[i]]
+    
+    for (let y = 1; i <= numberOfPlayers; y++){
+      if (isWinner.includes(playerChoice[y])){
+        winner[i] = winner[i]+1;
+        return winner[i];
+      }
+    }
+
+  }
+
 }

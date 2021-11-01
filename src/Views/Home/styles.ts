@@ -153,3 +153,41 @@ export const Score = styled.div`
   align-items: center;
   justify-content: center;
 `
+export const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
+
+  &:hover .dropdown-item{
+    display: block;
+  }
+
+  .dropdown-item{
+    font-weight: bold;
+    text-shadow: none;
+    text-decoration: none;
+    color: white;
+    background-color: #345a63;
+    display: none;
+    padding: 0.7rem 4rem;
+
+    &:hover{
+      display: block;
+      background-color: #9BBEBF;
+      color: black;
+      border-radius: .2rem;
+      box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.36);
+    }
+  }
+  
+`
+export const HowManyPlayersButton = styled.button`
+  display: block;
+  width: 10rem;
+  height: 4rem;
+  font-size: 150%;
+  color: white;
+  background-color: #345B63;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.36);
+  margin-bottom: 16rem;
+`
