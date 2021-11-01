@@ -1,22 +1,32 @@
-import React, { useEffect } from 'react';
 import { AgainButton, ResetButton } from "./styles"
 
 interface Props {
-  player: number;
   onAgain: () => void;
   onReset: () => void;
+  winners: number[];
+  numberOfPlayers: number;
 }
 
-const Result: React.FC<Props> = ({player, onAgain, onReset}) => {
-  return (
+const Result: React.FC<Props> = ({ winners, onAgain, onReset, numberOfPlayers }) => {
+
+  const players:number[] = []
+
+  winners.forEach((player, i) => {
+    players.push(i)
+  })
+
+  return(
     <>
       <h2>Resultado</h2>
-      <h1>{player > 0 ? `jogador ${player} ganhou!`: `empate!`}</h1>
-        <AgainButton onClick={onAgain}>de novo</AgainButton>
-        <ResetButton onClick={onReset}>zerar</ResetButton>
+      {players.length == 0 || players.length == numberOfPlayers ? 
+      <h1>empate!</h1> : (players.length >= 2 ?
+        (<h1>jogadores {players.join(' e ')} ganharam</h1>)
+      : (<h1>jogador {players[0]} ganhou!</h1>)
+      )}
+      <AgainButton onClick={onAgain}>de novo</AgainButton>
+      <ResetButton onClick={onReset}>zerar</ResetButton>
     </>
   )
 }
 
 export default Result;
-

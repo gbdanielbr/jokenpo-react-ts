@@ -1,24 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import Result from './Result';
-import { GameHands, getWinningPlayer } from './rules'
+import { GameHands, getWinningPlayers } from './rules'
 import { Container, Box, Score } from './styles';
 import PlayerChoosing from './PlayerChoosing';
+import PlayerNumber from './PlayerNumber';
 
 const Home: React.FC = () => {
   const [player, setPlayer] = useState(1);
-  const [playerChoice, setPlayerChoice] = useState<GameHands[]>([])
-  const [score, setScore] = useState<number[]>([0,0])
-  const [winningPlayer, setWinningPlayer] = useState(0)
+  const [numberOfPlayers, setNumberOfPlayers] = useState(0);
+  const [playerChoice, setPlayerChoice] = useState<GameHands[]>([]);
+  const [score, setScore] = useState<number[]>([]);
+  const [winners, setWinners] = useState<number[]>([]);
+
+  const handleOnHowMany = (numberOfPlayers:number) => {
+    setNumberOfPlayers(numberOfPlayers)
+    setPlayer(1)
+
+    for (let i = 0; i < numberOfPlayers; i++) {score[i] = 0}
+    setScore(score)
+  }
 
   const handleOnHandClick = (hand: GameHands) => {
-    setPlayer(player + 1)
     setPlayerChoice([...playerChoice, hand])
+    setPlayer(player + 1)
   }
 
   const handleOnReset = () => {
-    setScore([0, 0])
+    for (let i = 0; i < numberOfPlayers; i++) {score[i] = 0}
+    setScore(score)
+
     setPlayer(1)
     setPlayerChoice([])
+    setNumberOfPlayers(0);
   }
 
   const handleOnAgain = () => {
@@ -27,40 +40,45 @@ const Home: React.FC = () => {
   }
 
   useEffect(() => {
-    if(player <= 2) return
+    if(player <= numberOfPlayers) return
 
-    const winner = getWinningPlayer(playerChoice[0], playerChoice[1])
-    setWinningPlayer(winner)
+    const winners = getWinningPlayers(numberOfPlayers, playerChoice)
 
-    if (winner === 1) {
-      setScore([score[0]+1,score[1]])
-    } 
-    if (winner === 2) {
-      setScore([score[0],score[1]+1])
+    if((winners.length - 1) !== numberOfPlayers){
+      winners.forEach((player, i) => {
+         score[i-1] += 1
+      })
+      setScore(score)
     }
-    },[player])
+    setWinners(winners)
+
+  },[player]) 
 
   return (
     <Container>   
       <Box>
-        {player <= 2 ? 
-          (
+        {numberOfPlayers < 2 ? (
+        <PlayerNumber 
+          numberOfPlayers={numberOfPlayers}
+          onHowMany={handleOnHowMany}
+        />
+        ):(player <= numberOfPlayers ?(
             <PlayerChoosing 
               player={player} 
               onHandClick={handleOnHandClick} 
-            /> 
-          )
-        : (
-            <Result 
-              player={winningPlayer} 
+        /> 
+        ):(
+            <Result
+              numberOfPlayers={numberOfPlayers}
+              winners={winners}
               onAgain={handleOnAgain} 
               onReset={handleOnReset} 
             /> 
-          )
+          ))
         }
         <Score>
           <h2>placar</h2>
-          <h2>{score[0]} vs {score[1]}</h2>
+          <h3>{score.join(` vs `)}</h3>
         </Score>
 
       </Box>

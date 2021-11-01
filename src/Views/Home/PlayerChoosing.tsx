@@ -10,7 +10,7 @@ import Spock from '../../images/spock.png';
 
 interface PlayerChoosingProps {
   player: number;
-  onHandClick: (choice: GameHands) => void
+  onHandClick: (choice: GameHands) => void;
 }
 
 const PlayerChoosing: React.FC<PlayerChoosingProps> = ({ player, onHandClick }) => {

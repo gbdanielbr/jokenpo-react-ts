@@ -8,12 +8,20 @@ const rules = {
   Lizard: ['Spock', 'Paper']
 }
 
-export const getWinningPlayer = (player1Choice: GameHands, player2Choice: GameHands): number => {
-  const player1WinningCondition = rules[player1Choice]
-  if (player1WinningCondition.includes(player2Choice)) return 1
-  
-  const player2WinningCondition = rules[player2Choice]
-  if (player2WinningCondition.includes(player1Choice)) return 2
+export const getWinningPlayers = (numberOfPlayers: number, playerChoice: GameHands[]):number[] => {
 
-  return 0
+  const winnersArray:number[] = []
+
+  for (let i = 1; i <= numberOfPlayers; i++){
+    let isWinner = rules[playerChoice[i-1]]
+    
+    for (let y = 1; y <= numberOfPlayers; y++){
+      if (isWinner.includes(playerChoice[y-1])){
+        winnersArray[i] = 1
+        continue
+      }
+    }
+  }
+  
+  return winnersArray
 }

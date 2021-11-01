@@ -17,8 +17,8 @@ export const Box = styled.div`
   align-items: center;
   flex-direction: column;
   background: radial-gradient(#d4ecdd, #93b5c6);
-  height: 36rem;
-  width: 24rem;
+  height: 38rem;
+  width: 25rem;
   justify-content: space-around;
   border-radius: 1rem;
   box-shadow: 0 0 16px 6px rgba(0, 0, 0, 0.36);
@@ -44,7 +44,7 @@ export const Player = styled.div`
   position: absolute;
   align-items: center;
   justify-content: center;
-  margin-top: -27rem;
+  margin-top: -29rem;
   color: black;
   h1 {
     margin-top: 1rem;
@@ -110,9 +110,9 @@ export const SpockButton = styled.div`
 `
 
 export const AgainButton = styled.button`
-  width: 8rem;
-  height: 3.2rem;
-  font-size: 130%;
+  width: 10rem;
+  height: 4rem;
+  font-size: 150;
   color: white;
   background: #345B63;
   border-radius: 0.3rem;
@@ -129,9 +129,9 @@ export const ResetButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5rem;
-  height: 2rem;
-  font-size: 90%;
+  width: 8rem;
+  height: 3rem;
+  font-size: 130%;
   font-weight: bold;
   padding: 0.5rem;
   margin-bottom: 4rem;
@@ -152,4 +152,42 @@ export const Score = styled.div`
   position: absolute;
   align-items: center;
   justify-content: center;
+`
+export const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
+
+  &:hover .dropdown-item{
+    display: block;
+  }
+
+  .dropdown-item{
+    font-weight: bold;
+    text-shadow: none;
+    text-decoration: none;
+    color: white;
+    background-color: #345a63;
+    display: none;
+    padding: 0.7rem 4rem;
+
+    &:hover{
+      display: block;
+      background-color: #9BBEBF;
+      color: black;
+      border-radius: .2rem;
+      box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.36);
+    }
+  }
+  
+`
+export const HowManyPlayersButton = styled.button`
+  display: block;
+  width: 10rem;
+  height: 4rem;
+  font-size: 150%;
+  color: white;
+  background-color: #345B63;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.36);
+  margin-bottom: 16rem;
 `
