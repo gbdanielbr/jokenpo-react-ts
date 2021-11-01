@@ -9,12 +9,15 @@ const Home: React.FC = () => {
   const [player, setPlayer] = useState(1);
   const [numberOfPlayers, setNumberOfPlayers] = useState(0);
   const [playerChoice, setPlayerChoice] = useState<GameHands[]>([]);
-  // const [score, setScore] = useState<number[]>([]);
+  const [score, setScore] = useState<number[]>([]);
   const [winners, setWinners] = useState<number[]>([]);
 
   const handleOnHowMany = (numberOfPlayers:number) => {
     setNumberOfPlayers(numberOfPlayers)
     setPlayer(1)
+
+    for (let i = 0; i < numberOfPlayers; i++) {score[i] = 0}
+    setScore(score)
   }
 
   const handleOnHandClick = (hand: GameHands) => {
@@ -23,9 +26,9 @@ const Home: React.FC = () => {
   }
 
   const handleOnReset = () => {
-    // for (let i = 0; i < numberOfPlayers; i++) {
-    //   setScore([i = 0])
-    // }
+    for (let i = 0; i < numberOfPlayers; i++) {score[i] = 0}
+    setScore(score)
+
     setPlayer(1)
     setPlayerChoice([])
     setNumberOfPlayers(0);
@@ -42,27 +45,13 @@ const Home: React.FC = () => {
     const winners = getWinningPlayers(numberOfPlayers, playerChoice)
     setWinners(winners)
 
-    // for(let i:number = 0; i < numberOfPlayers; i++){
-    //   if (winnersArray[i] == undefined) {
-    //     return
-    //   } else {
-    //     winners[i] = `${i+1}`
-    //   }
-    // }
+    console.log(score)
+    winners.forEach((player, i) => {
+      score[i-1] += 1
+    })
 
+    setScore(score)
   },[player])
-  
-    
-    // const winner = getWinningPlayer(playerChoice[0], playerChoice[1])
-    // setWinningPlayer(winner)
-
-    // if (winner === 1) {
-      // setScore([score[0]+1,score[1]])
-    // } 
-    // if (winner === 2) {
-      // setScore([score[0],score[1]+1])
-    // }
-    // },[player])
 
   return (
     <Container>   
@@ -86,10 +75,10 @@ const Home: React.FC = () => {
             /> 
           ))
         }
-        {/* <Score>
+        <Score>
           <h2>placar</h2>
-          <h2>{score[0]} vs {score[1]}</h2>
-        </Score> */}
+          <h3>{score.join(` vs `)}</h3>
+        </Score>
 
       </Box>
     </Container>

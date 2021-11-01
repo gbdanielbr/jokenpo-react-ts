@@ -21,12 +21,7 @@ export const getWinningPlayers = (numberOfPlayers: number, playerChoice: GameHan
         continue
       }
     }
-
-    // if (winnersArray[i] != undefined) {
-    //   winners[i] = `${i+1}`
-    //   continue
-    // }
   }
-
+  
   return winnersArray
 }

@@ -18,7 +18,8 @@ const Result: React.FC<Props> = ({ winners, onAgain, onReset, numberOfPlayers })
   return(
     <>
       <h2>Resultado</h2>
-      {players.length == 0 || players.length == numberOfPlayers ? <h1>empate!</h1> : (players.length >= 2 ?
+      {players.length == 0 || players.length == numberOfPlayers ? 
+      <h1>empate!</h1> : (players.length >= 2 ?
         (<h1>jogadores {players.join(' e ')} ganharam</h1>)
       : (<h1>jogador {players[0]} ganhou!</h1>)
       )}
