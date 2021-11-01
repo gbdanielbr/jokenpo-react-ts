@@ -1,5 +1,5 @@
 import React from "react";
-import { GameHands } from "./Rules"
+import { GameHands } from "./rules"
 import { HandContainer, Header, Rules, Player, RockButton, PaperButton, ScissorsButton, LizardButton, SpockButton } from "./styles";
 import RulesImage from '../../images/rules.png';
 import Rock from '../../images/rock.png';

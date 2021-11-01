@@ -17,8 +17,8 @@ export const Box = styled.div`
   align-items: center;
   flex-direction: column;
   background: radial-gradient(#d4ecdd, #93b5c6);
-  height: 36rem;
-  width: 24rem;
+  height: 38rem;
+  width: 25rem;
   justify-content: space-around;
   border-radius: 1rem;
   box-shadow: 0 0 16px 6px rgba(0, 0, 0, 0.36);
@@ -44,7 +44,7 @@ export const Player = styled.div`
   position: absolute;
   align-items: center;
   justify-content: center;
-  margin-top: -27rem;
+  margin-top: -29rem;
   color: black;
   h1 {
     margin-top: 1rem;
@@ -110,9 +110,9 @@ export const SpockButton = styled.div`
 `
 
 export const AgainButton = styled.button`
-  width: 8rem;
-  height: 3.2rem;
-  font-size: 130%;
+  width: 10rem;
+  height: 4rem;
+  font-size: 150;
   color: white;
   background: #345B63;
   border-radius: 0.3rem;
@@ -129,9 +129,9 @@ export const ResetButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5rem;
-  height: 2rem;
-  font-size: 90%;
+  width: 8rem;
+  height: 3rem;
+  font-size: 130%;
   font-weight: bold;
   padding: 0.5rem;
   margin-bottom: 4rem;

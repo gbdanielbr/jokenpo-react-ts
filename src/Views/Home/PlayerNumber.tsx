@@ -3,7 +3,7 @@ import { Dropdown, HowManyPlayersButton } from "./styles"
 
 interface PlayerNumberProps {
   numberOfPlayers: number;
-  onHowMany: (numberOfPlayers: number) => void;
+  onHowMany: (number: number) => void;
 }
 
 const PlayerNumber: React.FC<PlayerNumberProps> = ({onHowMany}) => {

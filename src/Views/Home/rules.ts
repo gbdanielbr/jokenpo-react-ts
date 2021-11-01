@@ -1,11 +1,5 @@
 export type GameHands = 'Rock' | 'Paper' | 'Scissors' | 'Lizard' | 'Spock'
 
-interface props{
-  player:number;
-  numberOfPlayers:number;
-  playerChoice:GameHands[];
-}
-
 const rules = { 
   Rock: ['Scissors', 'Lizard'],
   Paper: ['Rock', 'Spock'],
@@ -14,20 +8,25 @@ const rules = {
   Lizard: ['Spock', 'Paper']
 }
 
-export const getWinningPlayer = ({player, numberOfPlayers, playerChoice}:props) => {
+export const getWinningPlayers = (numberOfPlayers: number, playerChoice: GameHands[]):number[] => {
 
-  const winner:number[] = [];
+  const winnersArray:number[] = []
 
   for (let i = 1; i <= numberOfPlayers; i++){
-    const isWinner = rules[playerChoice[i]]
+    let isWinner = rules[playerChoice[i-1]]
     
-    for (let y = 1; i <= numberOfPlayers; y++){
-      if (isWinner.includes(playerChoice[y])){
-        winner[i] = winner[i]+1;
-        return winner[i];
+    for (let y = 1; y <= numberOfPlayers; y++){
+      if (isWinner.includes(playerChoice[y-1])){
+        winnersArray[i] = 1
+        continue
       }
     }
 
+    // if (winnersArray[i] != undefined) {
+    //   winners[i] = `${i+1}`
+    //   continue
+    // }
   }
 
+  return winnersArray
 }
