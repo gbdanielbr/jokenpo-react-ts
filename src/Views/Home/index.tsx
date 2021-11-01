@@ -43,15 +43,16 @@ const Home: React.FC = () => {
     if(player <= numberOfPlayers) return
 
     const winners = getWinningPlayers(numberOfPlayers, playerChoice)
+
+    if((winners.length - 1) !== numberOfPlayers){
+      winners.forEach((player, i) => {
+         score[i-1] += 1
+      })
+      setScore(score)
+    }
     setWinners(winners)
 
-    console.log(score)
-    winners.forEach((player, i) => {
-      score[i-1] += 1
-    })
-
-    setScore(score)
-  },[player])
+  },[player]) 
 
   return (
     <Container>   
