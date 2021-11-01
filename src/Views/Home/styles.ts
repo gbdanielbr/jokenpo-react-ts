@@ -53,7 +53,7 @@ export const Player = styled.div`
 
 export const HandContainer = styled.div<props>`
   .button{
-    filter: ${props => props.player === 1 ? 'hue-rotate(0deg)' : 'hue-rotate(65deg)'};
+    filter: ${props => props.player === 1 ? 'hue-rotate(0deg)' : props.player === 2 ? 'hue-rotate(140deg)' : props.player === 3 ? 'hue-rotate(240deg)' :  'hue-rotate(65deg)'};
     cursor: pointer;
     background-color: white;
     border-radius: 50%;
@@ -134,7 +134,7 @@ export const ResetButton = styled.div`
   font-size: 130%;
   font-weight: bold;
   padding: 0.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   color: black;
   background: transparent;
   border-radius: 0.3rem;
@@ -169,6 +169,8 @@ export const Dropdown = styled.div`
     background-color: #345a63;
     display: none;
     padding: 0.7rem 4rem;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.36);
+    border-radius: 0.2rem;
 
     &:hover{
       display: block;
@@ -178,7 +180,6 @@ export const Dropdown = styled.div`
       box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.36);
     }
   }
-  
 `
 export const HowManyPlayersButton = styled.button`
   display: block;
