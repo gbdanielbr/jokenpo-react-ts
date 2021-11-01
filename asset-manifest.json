@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/jokenpo-react-ts/static/js/main.14d6e396.chunk.js",
-    "main.js.map": "/jokenpo-react-ts/static/js/main.14d6e396.chunk.js.map",
+    "main.js": "/jokenpo-react-ts/static/js/main.ac57488e.chunk.js",
+    "main.js.map": "/jokenpo-react-ts/static/js/main.ac57488e.chunk.js.map",
     "runtime-main.js": "/jokenpo-react-ts/static/js/runtime-main.b7bb3406.js",
     "runtime-main.js.map": "/jokenpo-react-ts/static/js/runtime-main.b7bb3406.js.map",
-    "static/js/2.724bd571.chunk.js": "/jokenpo-react-ts/static/js/2.724bd571.chunk.js",
-    "static/js/2.724bd571.chunk.js.map": "/jokenpo-react-ts/static/js/2.724bd571.chunk.js.map",
+    "static/js/2.c680aa5b.chunk.js": "/jokenpo-react-ts/static/js/2.c680aa5b.chunk.js",
+    "static/js/2.c680aa5b.chunk.js.map": "/jokenpo-react-ts/static/js/2.c680aa5b.chunk.js.map",
     "index.html": "/jokenpo-react-ts/index.html",
-    "static/js/2.724bd571.chunk.js.LICENSE.txt": "/jokenpo-react-ts/static/js/2.724bd571.chunk.js.LICENSE.txt",
+    "static/js/2.c680aa5b.chunk.js.LICENSE.txt": "/jokenpo-react-ts/static/js/2.c680aa5b.chunk.js.LICENSE.txt",
     "static/media/lizard.4b1db4bf.png": "/jokenpo-react-ts/static/media/lizard.4b1db4bf.png",
     "static/media/paper.59d7dff7.png": "/jokenpo-react-ts/static/media/paper.59d7dff7.png",
     "static/media/rock.054cc43d.png": "/jokenpo-react-ts/static/media/rock.054cc43d.png",
@@ -17,7 +17,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b7bb3406.js",
-    "static/js/2.724bd571.chunk.js",
-    "static/js/main.14d6e396.chunk.js"
+    "static/js/2.c680aa5b.chunk.js",
+    "static/js/main.ac57488e.chunk.js"
   ]
 }
