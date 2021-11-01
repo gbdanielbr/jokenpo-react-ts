@@ -9,19 +9,13 @@ interface Props {
 
 const Result: React.FC<Props> = ({ winners, onAgain, onReset, numberOfPlayers }) => {
 
-  const players:number[] = []
-
-  winners.forEach((player, i) => {
-    players.push(i)
-  })
-
   return(
     <>
       <h2>Resultado</h2>
-      {players.length == 0 || players.length == numberOfPlayers ? 
-      <h1>empate!</h1> : (players.length >= 2 ?
-        (<h1>jogadores {players.join(' e ')} ganharam</h1>)
-      : (<h1>jogador {players[0]} ganhou!</h1>)
+      {winners.length == 0 || winners.length == numberOfPlayers ? 
+      <h1>empate!</h1> : (winners.length >= 2 ?
+        (<h1>jogadores {winners.join(' e ')} ganharam</h1>)
+      : (<h1>jogador {winners[0]} ganhou!</h1>)
       )}
       <AgainButton onClick={onAgain}>de novo</AgainButton>
       <ResetButton onClick={onReset}>zerar</ResetButton>
