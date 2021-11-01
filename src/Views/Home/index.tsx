@@ -27,7 +27,7 @@ const Home: React.FC = () => {
 
   const handleOnReset = () => {
     for (let i = 0; i < numberOfPlayers; i++) {score[i] = 0}
-    setScore(score)
+    setScore([])
 
     setPlayer(1)
     setPlayerChoice([])
@@ -43,13 +43,14 @@ const Home: React.FC = () => {
     if(player <= numberOfPlayers) return
 
     const winners = getWinningPlayers(numberOfPlayers, playerChoice)
-
-    if((winners.length - 1) !== numberOfPlayers){
-      winners.forEach((player, i) => {
-         score[i-1] += 1
+    
+    if(winners.length !== numberOfPlayers){
+      winners.forEach((player) => {
+        score[player -1] += 1
       })
       setScore(score)
     }
+
     setWinners(winners)
 
   },[player]) 
