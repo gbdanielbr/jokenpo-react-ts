@@ -23,9 +23,9 @@ const Home: React.FC = () => {
   }
 
   const handleOnReset = () => {
-    for (let i = 0; i < numberOfPlayers; i++) {
-      setScore([i = 0])
-    }
+    // for (let i = 0; i < numberOfPlayers; i++) {
+    //   setScore([i = 0])
+    // }
     setPlayer(1)
     setPlayerChoice([])
     setNumberOfPlayers(0);
