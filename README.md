@@ -30,10 +30,10 @@ In this repository I develop a 'Rock, Paper, Scissors, Lizard, Spock' game as a 
 - [x] Public URL deployment: https://gbdanielbr.github.io/jokenpo-react-ts/;
 - [x] Code refactoring;
 - [x] Upgrade to "Rock, Paper, Scissors, Lizard, Spock";
+- [x] Adapt the game logic for more players;
 
 ### Under development:
 
-- [ ] Adapt the game logic for more players;
 - [ ] Bug fixes;
 
 ---
