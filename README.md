@@ -1,9 +1,8 @@
 ## Front-End Development Challenge
 
 ### Description:
-In this branch I develop a game logic that will permit more than two players in the game.
 
-In this repository I develop a 'Rock, Paper, Scissors, Lizard, Spock' game as a challenge using TypeScript and ReactJS. The objective is to develop the game for two players, receive their choices and then shows the winner. I also implemented a score counting logic and a reset button.
+In this repository I develop a 'Rock, Paper, Scissors, Lizard, Spock' game as a challenge using TypeScript and ReactJS. The objective is to develop the game for two, three or four players, receive their choices and then shows the winner. I also implemented a score counting logic and a reset button.
 
 ---
 
